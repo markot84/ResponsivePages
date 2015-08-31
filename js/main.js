@@ -1,15 +1,15 @@
 $(document).ready(function(){
-	$('#list').on('click',function(){
-		list_pages();
+	$('#list_link').on('click',function(){
+		show_list_pages();
 	});
-	$('#create').on('click',function(){
-		create_page();
+	$('#create_link').on('click',function(){
+		show_create_page();
 	});
 });
 
-function list_pages() {
-	var source;
-	var template;
+function show_list_pages() {
+	var source = $("#list_pages_template").html();
+	var template = Handlebars.compile(source);
 	
 	$.ajax({
       type: "GET",
@@ -21,16 +21,13 @@ function list_pages() {
 	  }
 	});
 	
-	
-		var source   = $("#list_pages").html();
-		var template = Handlebars.compile(source);
-		var context = {title: "My New Post", description: "This is my first post!"};
-		var html    = template(context);
-		$('#content').html(html);
+	var context = {title: "My New Post", description: "This is my first post!"};
+	var html    = template(context);
+	$('#content').html(html);
 }
 
-function create_page() {
-	var source   = $("#create_page").html();
+function show_create_page() {
+	var source   = $("#create_page_template").html();
 	var template = Handlebars.compile(source);
 	$('#content').html(template);
 	$('#create_page').on('click',function(){
