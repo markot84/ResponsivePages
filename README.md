@@ -1,0 +1,2 @@
+# ResponsivePages
+Pages administration tool
