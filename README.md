@@ -1,2 +1,2 @@
 # ResponsivePages
-Pages administration tool
+Pages administration tool.
