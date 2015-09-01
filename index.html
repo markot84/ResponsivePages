@@ -119,13 +119,14 @@
 					<br/>
 					<div class="row">
 						<div class="large-12 columns">
-							<label for="published_on">Published on:</label>
-							<input type="text" id="published_on" value="{{publishedOn}}" class="hasdatepicker"/>
+							<label for="published_on">Published on:<small> required</small>
+								<input type="text" id="published_on" value="{{publishedOn}}" class="hasdatepicker" required/>
+							</label>
+							<small class="error">Publish date is required</small>
 						</div>
 					</div>
 					<div class="row">
 						<div class="large-12 columns">
-							<br/>
 							<label for="is_active">Is active:</label>
 							<input type="checkbox" id="is_active" {{#if isActive}}checked="checked"{{/if}}/>
 						</div>
