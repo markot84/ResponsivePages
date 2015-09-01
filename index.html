@@ -23,17 +23,17 @@
 	<div class="row">
 		<div class="large-3 columns">
 			<ul class="side-nav">
-				<li><a id="list_link"><i style="color:black" class="fa fa-list"></i> List pages</a></li>
-				<li><a id="create_link"><i style="color:black" class="fa fa-plus-square"></i> Create page</a></li>
+				<li><a class="list_link" description="yo"><i style="color:black" class="fa fa-list"></i> List pages</a></li>
+				<li><a class="create_link"><i style="color:black" class="fa fa-plus-square"></i> Create page</a></li>
 			</ul>
 		</div>
-		<div id="content" class="large-9 columns"></div>
+		<div id="content" class="large-9 columns"><p style="text-align:center;margin-top:20px;"><a href="#" class="list_link">List pages</a> to display existing pages</p><p style="text-align:center;margin-top:20px;"><a href="#" class="create_link">Create page</a> to add new page</p></div>
 	</div>
 	<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog"></div>
 </body>
 <script id="list_pages_template" type="text/x-handlebars-template">																<!-- HANDLEBARS TEMPLATES-->
 	<div class="row">
-		<table class="responsive">
+		<table class="large-12 columns responsive">
 			<thead>
 				<tr>
 					<th>ID</th>

@@ -1,14 +1,14 @@
 $(document).ready(function(){
-	$('#list_link').on('click',function(){
+	$('.list_link').on('click',function(){
 		show_list_pages();
 		$('li').removeClass('active');
-		$(this).closest('li').addClass('active');
+		$('.list_link').closest('li').addClass('active');
 	});
 	
-	$('#create_link').on('click',function(){
+	$('.create_link').on('click',function(){
 		show_create_page();
 		$('li').removeClass('active');
-		$(this).closest('li').addClass('active');
+		$('.create_link').closest('li').addClass('active');
 	});
 	
 });
