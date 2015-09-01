@@ -1,3 +1,4 @@
+// responsive-tables.js
 $(document).ready(function() {
   var switched = false;
   var updateTables = function() {
@@ -64,4 +65,12 @@ $(document).ready(function() {
     });
   }
 
+});
+
+$(window).on('load resize', function () {
+  if ($(this).width() < 767) {
+    $('table tfoot').hide();
+  } else {
+    $('table tfoot').show();
+  }  
 });

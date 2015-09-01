@@ -9,9 +9,3 @@
 button {
 	color:white;
 }
-
-@media (max-width: 760px) {
-  .facet_sidebar {
-    display: none;
-  }
-}

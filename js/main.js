@@ -37,6 +37,7 @@ function show_list_pages() {
 				var page_id = $(this).closest('tr').find('.page_id').html()
 				show_edit_page(page_id);	
 			});
+			$(window).trigger('redraw');										//for responsive-tables plugin
 		}
 	});
 }
