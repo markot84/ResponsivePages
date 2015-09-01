@@ -65,7 +65,8 @@ function show_edit_page(page_id) {
 		contentType: "application/json",
 		url: 'http://pagesmanagement.azurewebsites.net/api/ResponsivePages/'+page_id,
 		dataType: "json",
-		success: function(data){		
+		success: function(data){
+			data.is_edit = 1;
 			var html    = template(data);
 			$('#content').html(html);
 			$('.hasdatepicker').datetimepicker({
@@ -101,13 +102,15 @@ function edit_page(page_id) {
 		url: 'http://pagesmanagement.azurewebsites.net/api/ResponsivePages/'+page_id,
 		data: data,
 		dataType: "json",
+		complete: function(){
+			$.ambiance({
+				message: "Page edited successufully",
+				title: "Success!",
+				type: "success"
+			})
+			show_list_pages();
+		}
 	});
-	$.ambiance({
-		message: "Page edited successufully",
-		title: "Success!",
-		type: "success"
-	})
-	show_list_pages();
 }
 
 function create_new_page() {
