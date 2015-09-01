@@ -23,6 +23,7 @@ function show_list_pages() {
 		url: 'http://pagesmanagement.azurewebsites.net/api/ResponsivePages',
 		dataType: "json",
 		success: function(data){
+			$('#create_page').removeAttr('disabled');
 			data = {
 				pages : data
 			};
@@ -45,8 +46,10 @@ function show_list_pages() {
 function show_create_page() {
 	var source   = $("#create_page_template").html();
 	var template = Handlebars.compile(source);
-	$('#content').html(template);
+	var html    = template({is_edit:0});
+	$('#content').html(html);
 	$('#create_page').on('click',function(e){
+		$('#create_page').attr('disabled','disabled');
 		create_new_page();
 	});
 	$('.hasdatepicker').datetimepicker({
@@ -77,9 +80,9 @@ function show_edit_page(page_id) {
 			});
 			$('#create_page').on('click',function(e){
 				e.preventDefault();
-				edit_page(page_id)
+				edit_page(page_id);
 			});
-			$(document).foundation();
+			$(document).foundation(); 
 		}
 	});
 }
@@ -105,7 +108,7 @@ function edit_page(page_id) {
 		dataType: "json",
 		complete: function(){
 			$.ambiance({
-				message: "Page edited successufully",
+				message: "Page edited successfully",
 				title: "Success!",
 				type: "success"
 			})
@@ -115,6 +118,10 @@ function edit_page(page_id) {
 }
 
 function create_new_page() {
+	
+	if($('.error').is(":visible") || (!$('#id').val() && !$('#title').val() && !$('#published_on').val())){
+		$('#create_page').removeAttr('disabled');
+	}
 	
 	var data = {
 		id: $('#id').val(),

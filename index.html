@@ -79,17 +79,19 @@
 <script id="create_page_template" type="text/x-handlebars-template">
 	<div class="row">
 		<div class="large-12 columns">
-			<form data-abide="ajax">
+			<form data-abide="ajax" id="create_page_form">
 				<fieldset>
 					<legend>Create page</legend>
+					{{#equals is_edit 1}} 
 					<div class="row">
 						<div class="large-12 columns">
 							<label for="id">ID: <small> required</small>
-								<input type="text" id="id" value="{{id}}" {{#equals is_edit 1}}disabled{{/equals}} required pattern="integer" />
+								<input type="text" id="id" value="{{id}}" disabled required pattern="integer" />
 							</label>
 							<small class="error">ID is required and must be a number</small>
 						</div>
 					</div>
+					{{/equals}}
 					<div class="row">
 						<div class="large-12 columns">
 							<label for="title">Title:<small> required</small>
