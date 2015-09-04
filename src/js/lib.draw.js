@@ -83,7 +83,7 @@ function show_edit_page(page_id) {
 			$.ambiance({
 				message: "No page was found with id "+page_id,
 				type: "error",
-				title: "Error!"
+				title: "Error"
 			})
 		}
 		
