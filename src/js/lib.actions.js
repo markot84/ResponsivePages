@@ -36,8 +36,6 @@ function edit_page(page_id) {
 
 function create_new_page() {
 	
-	show_overlay();
-	
 	if($('.error').is(":visible") || (!$('#id').val() && !$('#title').val() && !$('#published_on').val())){
 		$('#create_page').removeAttr('disabled');
 	}
