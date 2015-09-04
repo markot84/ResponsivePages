@@ -21,7 +21,7 @@ $(document).ready(function(){
 		});
 		
 		this.notFound = function(){
-			// do something
+			show_landing_page();
 		}
 		
 	});
