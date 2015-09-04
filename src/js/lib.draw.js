@@ -4,8 +4,11 @@ function show_landing_page() {
 	$('#content').html(template);
 }
 
-function show_list_pages() {
-	show_overlay();
+function show_list_pages(no_overlay) {
+	
+	if(no_overlay != 1){
+		show_overlay();
+	}
 	
 	var source = $("#list_pages_template").html();
 	var template = Handlebars.compile(source);
