@@ -21,8 +21,7 @@ function show_overlay(){
 	$('.loading-overlay').show();
 	$('.loading-info').css("position","absolute");
     $('.loading-info').css("top", '30%');
-    $('.loading-info').css("left", Math.max(0, (($(window).width() - $('.loading-info').outerWidth()) / 2) + 
-                                                $(window).scrollLeft()) + "px");
+    $('.loading-info').css("left", Math.max(0, (($(window).width() - $('.loading-info').outerWidth()) / 2) + $(window).scrollLeft()) + "px");
 	$('.loading-info').show();
 }
 
