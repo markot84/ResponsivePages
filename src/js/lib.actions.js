@@ -61,7 +61,7 @@ function create_new_page() {
 			success: function(data){
 				if(data.id){
 					$.ambiance({
-						message: "Page added successufully",
+						message: "Page added successfully",
 						title: "Success!",
 						type: "success"
 					})
@@ -92,7 +92,7 @@ function delete_page(page_id){
 				success: function(data){
 					if(data.id){
 						$.ambiance({
-							message: "Page deleted successufully",
+							message: "Page deleted successfully",
 							title: "Success!",
 							type: "success"
 						})
