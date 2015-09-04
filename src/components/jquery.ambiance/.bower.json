@@ -1,0 +1,14 @@
+{
+  "name": "jquery.ambiance",
+  "homepage": "https://github.com/richardhsu/jquery.ambiance",
+  "_release": "075929aa07",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "075929aa07d4f1d186efbc00fdfa0af6cbd9c120"
+  },
+  "_source": "https://github.com/richardhsu/jquery.ambiance.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/richardhsu/jquery.ambiance.git",
+  "_direct": true
+}
