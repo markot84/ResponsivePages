@@ -56,7 +56,7 @@ function show_create_page() {
 function show_edit_page(page_id) {
 	var source   = $("#create_page_template").html();
 	var template = Handlebars.compile(source);
-	
+		
 	$.ajax({
 		type: "GET",
 		contentType: "application/json",
@@ -76,7 +76,7 @@ function show_edit_page(page_id) {
 					e.preventDefault();
 					edit_page(page_id);
 				});
-				$(document).foundation(); 
+				$(document).foundation('abide','events'); 
 			}
 		},
 		error: function(){
