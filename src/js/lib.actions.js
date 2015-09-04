@@ -103,7 +103,7 @@ function delete_page(page_id){
 							title: "Error!"
 						})
 					}
-					show_list_pages();
+					show_list_pages(1);
 				}
 			});
 		}
