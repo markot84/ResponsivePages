@@ -1,0 +1,20 @@
+{
+  "name": "ResponsivePages",
+  "version": "0.0.0",
+  "homepage": "https://github.com/markot84/ResponsivePages",
+  "authors": [
+    "Marios Kotoulas <kotoulas.marios@gmail.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "foundation": "~5.5.2",
+    "handlebars": "~4.0.1",
+    "jquery": "~2.1.4",
+    "jquery-ui": "~1.11.4",
+    "jqueryui-timepicker-addon": "jQuery-Timepicker-Addon#~1.5.5",
+    "sammy": "~0.7.6"
+  }
+}
