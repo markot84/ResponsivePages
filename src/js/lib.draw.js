@@ -5,6 +5,8 @@ function show_landing_page() {
 }
 
 function show_list_pages() {
+	show_overlay();
+	
 	var source = $("#list_pages_template").html();
 	var template = Handlebars.compile(source);
 	
