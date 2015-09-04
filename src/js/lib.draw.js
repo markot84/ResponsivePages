@@ -89,6 +89,7 @@ function show_edit_page(page_id) {
 				type: "error",
 				title: "Error"
 			})
+			window.location.href = "#list_pages/";
 		}
 		
 	});
