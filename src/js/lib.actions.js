@@ -6,7 +6,7 @@ function edit_page(page_id) {
 		description: $('#description').val(),
 		type: $('#type').val(),
 		isActive: $('#is_active').prop('checked'),
-		publishedOn: $('#published_on').val(),
+		publishedOn: $('#published_on').val()
 	};
 	
 	data = JSON.stringify(data);
