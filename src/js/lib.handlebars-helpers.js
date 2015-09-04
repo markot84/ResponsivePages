@@ -1,4 +1,4 @@
-Handlebars.registerHelper('equals', function(a, b, options) {
+Handlebars.registerHelper('equals', function(x, y, options) {
 	if(a == b) {
 		return options.fn(this);
 	} else {
