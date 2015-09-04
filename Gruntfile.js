@@ -12,7 +12,7 @@ module.exports = function(grunt) {
       cssmin: {
 	target: {
 		files:{
-			'dist/css/min.css' : ['src/components/foundation/css/foundation.css','src/components/jquery.ambiance/assets/css/jquery/ambiance.css','src/components/jquery-ui/themes/base/jquery-ui.css','src/components/jqueryui-timepicker-addon/src/jquery-ui-timepicker-addon.css','src/css/style.css']
+			'dist/css/min.css' : ['src/components/foundation/css/foundation.css','src/components/jquery.ambiance/assets/css/jquery.ambiance.css','src/components/jquery-ui/themes/base/jquery-ui.css','src/components/jqueryui-timepicker-addon/src/jquery-ui-timepicker-addon.css','src/css/style.css']
 		}
 	}  
      }
