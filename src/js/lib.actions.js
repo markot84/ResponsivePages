@@ -1,5 +1,9 @@
 function edit_page(page_id) {
-	
+		
+	if(!$('#title').val() || !$('#published_on').val()){
+		return false;
+	}
+		
 	show_overlay();
 	
 	var data = {
