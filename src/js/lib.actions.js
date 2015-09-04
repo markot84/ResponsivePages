@@ -1,5 +1,7 @@
 function edit_page(page_id) {
 	
+	show_overlay();
+	
 	var data = {
 		id: $('#id').val(),
 		title: $('#title').val(),
@@ -23,7 +25,7 @@ function edit_page(page_id) {
 				title: "Success!",
 				type: "success"
 			})
-			show_list_pages();
+			window.location.href = "#list_pages/";
 		}
 	});
 }
@@ -65,7 +67,7 @@ function create_new_page() {
 					title: "Error!"
 				})
 			}
-			show_list_pages();
+			window.location.href = "#list_pages/";
 		}
 	});
 }
@@ -94,7 +96,7 @@ function delete_page(page_id){
 							title: "Error!"
 						})
 					}
-					show_list_pages();
+					window.location.href = "#list_pages/";
 				}
 			});
 		}
