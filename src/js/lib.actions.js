@@ -36,6 +36,8 @@ function edit_page(page_id) {
 
 function create_new_page() {
 	
+	show_overlay();
+	
 	if($('.error').is(":visible") || (!$('#id').val() && !$('#title').val() && !$('#published_on').val())){
 		$('#create_page').removeAttr('disabled');
 	}
@@ -77,6 +79,9 @@ function create_new_page() {
 }
 
 function delete_page(page_id){
+	
+	show_overlay();
+	
 	open_modal({
 		message:'<p>Are you sure you want to delete this page?</p>',
 		confirm:1,
