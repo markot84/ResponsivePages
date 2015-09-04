@@ -1,0 +1,139 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<link rel="stylesheet" href="css/min.css">
+	<script src="js/lib.min.js"></script>
+</head>
+<body>
+	<div class="row">
+		<div class="large-3 columns">
+			<ul class="side-nav">
+				<li><a href="#list_pages/" description="yo"><i style="color:black" class="fa fa-list"></i> List pages</a></li>
+				<li><a class="create_link" href="#create_page/"><i style="color:black" class="fa fa-plus-square"></i> Create page</a></li>
+			</ul>
+		</div>
+		<div id="content" class="large-9 columns"></div>
+	</div>
+	<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog"></div>
+</body>
+<script id="landing_page_template" type="text/x-handlebars-template">																<!-- HANDLEBARS TEMPLATES-->
+	<div class="row">
+			<p style="text-align:center;margin-top:20px;"><a href="#list_pages/">List pages</a> to display existing pages</p><p style="text-align:center;margin-top:20px;"><a href="#create_page/">Create page</a> to add new page</p>
+	</div>
+</script>
+<script id="list_pages_template" type="text/x-handlebars-template">																
+	<div class="row">
+		<table class="large-12 responsive">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Title</th>
+					<th>Description</th>
+					<th>Type</th>
+					<th>Is active</th>
+					<th>Published on</th>
+					<th>&nbsp;</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each pages}}
+				<tr>
+					<td class="page_id">{{id}}</td>
+					<td class="">{{title}}</td>
+					<td>{{description}}</td>
+					<td>{{#equals type 0}}
+							Menu
+						{{/equals}}
+						{{#equals type 1}}
+							Events
+						{{/equals}}
+						{{#equals type 2}}
+							Content
+						{{/equals}}
+					</td>
+					<td>{{#if isActive}}Yes{{else}}No{{/if}}</td>
+					<td>{{publishedOn}}</td>
+					<td><a href="#edit_page/{{id}}/"><button class="small"><i class="fa fa-pencil-square-o"></i> Edit</button></a></td>
+					<td><button class="delete small"><i class="fa fa-eraser"></i> Delete</button></td>
+				</tr>
+				{{else}}
+				<tr>
+					<td colspan="8" style="text-align:center">No pages available</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</script>
+<script id="create_page_template" type="text/x-handlebars-template">
+	<div class="row">
+		<div class="large-12 columns">
+			<form data-abide="ajax" id="create_page_form">
+				<fieldset>
+					<legend>Create page</legend>
+					{{#equals is_edit 1}} 
+					<div class="row">
+						<div class="large-12 columns">
+							<label for="id">ID: <small> required</small>
+								<input type="text" id="id" value="{{id}}" disabled required pattern="integer" />
+							</label>
+							<small class="error">ID is required and must be a number</small>
+						</div>
+					</div>
+					{{/equals}}
+					<div class="row">
+						<div class="large-12 columns">
+							<label for="title">Title:<small> required</small>
+								<input type="text" id="title" value="{{title}}" required maxlength="50"/>
+							</label>
+							<small class="error">Title is required</small>
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-12 columns">
+							<label for="description">Description:</label>
+							<textarea id="description" maxlength="200" style="height:200px">{{description}}</textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-12 columns">
+							<br/>
+							<label for="type">Type:
+								<select id="type">
+									<option value="0" {{#equals type 0}}selected{{/equals}}>Menu</option>
+									<option value="1" {{#equals type 1}}selected{{/equals}}>Events</option>
+									<option value="2" {{#equals type 2}}selected{{/equals}}>Content</option>
+								</select>
+							</label>
+						</div>
+					</div>
+					<br/>
+					<div class="row">
+						<div class="large-12 columns">
+							<label for="published_on">Published on:<small> required</small>
+								<input type="text" id="published_on" value="{{publishedOn}}" class="hasdatepicker" required/>
+							</label>
+							<small class="error">Publish date is required</small>
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-12 columns">
+							<label for="is_active">Is active:</label>
+							<input type="checkbox" id="is_active" {{#if isActive}}checked="checked"{{/if}}/>
+						</div>
+					</div>
+					<div class="row" style="margin-bottom: 2em;">
+						<div class="large-12 columns">
+							<button id="create_page" class="small"><i class="fa fa-plus-square"></i> Save</button>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</script>
+<div class="loading-overlay ajax-load"></div>
+<div class="loading-info ajax-load"><img src="images/ajax-loader.gif"> <div>Loading Please Wait...</div></div>
+</html>
