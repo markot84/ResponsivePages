@@ -100,7 +100,7 @@ function delete_page(page_id){
 							title: "Error!"
 						})
 					}
-					window.location.href = "#list_pages/";
+					show_list_pages();
 				}
 			});
 		}
