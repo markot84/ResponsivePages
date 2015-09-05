@@ -2,13 +2,13 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		uglify: {
 			my_target: {
-			files: {
-				'dist/js/lib.min.js': ['src/components/jquery/dist/jquery.js', 'src/components/jquery-ui/jquery-ui.js','src/components/handlebars/handlebars.js','src/components/sammy/lib/sammy.js',
-				'src/components/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.js','src/components/foundation/js/foundation.js','src/components/jquery.ambiance/assets/js/jquery.ambiance.js',
-				'src/js/lib.routes.js','src/js/lib.actions.js','src/js/lib.handlebars-helpers.js','src/js/lib.utilities.js','src/js/lib.draw.js']
+				files: {
+					'dist/js/lib.min.js': ['src/components/jquery/dist/jquery.js', 'src/components/jquery-ui/jquery-ui.js','src/components/handlebars/handlebars.js','src/components/sammy/lib/sammy.js',
+					'src/components/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.js','src/components/foundation/js/foundation.js','src/components/jquery.ambiance/assets/js/jquery.ambiance.js',
+					'src/js/lib.routes.js','src/js/lib.actions.js','src/js/lib.handlebars-helpers.js','src/js/lib.utilities.js','src/js/lib.draw.js']
+				}
 			}
-		}
-	},
+		},
 	copy: {
 		 main: {
 			files: [
@@ -34,8 +34,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('default', [
-	  'copy',
-      'uglify',
-      'cssmin',
+	'copy',
+      	'uglify',
+      	'cssmin',
   ]);  
 };
