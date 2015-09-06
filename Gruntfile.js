@@ -15,7 +15,16 @@ module.exports = function(grunt) {
 				// includes files within path
 				{expand: true, cwd:'src/components/font-awesome/fonts', src: ['*'], dest: 'dist/fonts/'},
 				{expand: true, cwd:'src/images', src: ['*'], dest: 'dist/images/'},
+				{src:'src/index.html', dest:'dist/index.html'}
 			],
+			options: {
+				noProcess: ['src/components/font-awesome/fonts/*','src/images/*'],
+				process: function (content, srcpath) {					
+					content =  content.replace(/<!-- j[\s\S]+js -->/,'<script src="js/lib.min.js"></script>');
+					content = content.replace(/<!-- c[\s\S]+css -->/,'<link rel="stylesheet" href="css/min.css">');
+					return content;
+				},
+			},
 		},
 	},	 
 	cssmin: {
