@@ -1,6 +1,5 @@
 function show_landing_page() {
-	var source = $("#landing_page_template").html();
-	var template = Handlebars.compile(source);
+	var template = Handlebars.templates['landing_page'];
 	$('#content').html(template);
 }
 
@@ -10,8 +9,7 @@ function show_list_pages(no_overlay) {
 		show_overlay();
 	}
 	
-	var source = $("#list_pages_template").html();
-	var template = Handlebars.compile(source);
+	var template = Handlebars.templates['list_pages'];
 	
 	$.ajax({
 		type: "GET",
@@ -41,8 +39,7 @@ function show_list_pages(no_overlay) {
 }
 
 function show_create_page() {
-	var source   = $("#create_page_template").html();
-	var template = Handlebars.compile(source);
+	var template = Handlebars.templates['create_page'];
 	var html    = template({is_edit:0});
 	$('#content').html(html);
 	$('#create_page').on('click',function(e){
@@ -58,8 +55,7 @@ function show_create_page() {
 }
 
 function show_edit_page(page_id) {
-	var source   = $("#create_page_template").html();
-	var template = Handlebars.compile(source);
+	var template = Handlebars.templates['create_page'];
 		
 	$.ajax({
 		type: "GET",
