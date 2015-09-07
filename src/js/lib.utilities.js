@@ -1,8 +1,8 @@
 function open_modal(options){
 	$('#myModal').html(options.message);
 	if(options.confirm == 1){
-		$('#myModal').append('<button class="confirm small"><i class="fa fa-check"></i>Confirm</button>');
-		$('#myModal').append('<button class="cancel small"><i class="fa fa-times"></i>Cancel</button>');
+		$('#myModal').append('<button class="confirm small"><i class="fa fa-check"></i> Confirm</button>');
+		$('#myModal').append('<button class="cancel small"><i class="fa fa-times"></i> Cancel</button>');
 	}
 	$('#myModal').foundation('reveal', 'open');
 	
