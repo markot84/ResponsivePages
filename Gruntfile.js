@@ -16,7 +16,6 @@ module.exports = function(grunt) {
 				{expand: true, cwd:'src/components/font-awesome/fonts', src: ['*'], dest: 'dist/fonts/'},
 				{expand: true, cwd:'src/images', src: ['*'], dest: 'dist/images/'},
 				{src:'src/index.html', dest:'dist/index.html'},
-				{src:'src/js/templates/handlebars-templates.js', dest:'dist/js/templates/handlebars-templates.js'}
 			],
 			options: {
 				noProcess: ['src/components/font-awesome/fonts/*','src/images/*'],
