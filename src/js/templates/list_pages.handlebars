@@ -1,0 +1,43 @@
+<div class="row">
+	<table class="large-12 responsive" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Title</th>
+				<th>Description</th>
+				<th>Type</th>
+				<th>Is active</th>
+				<th>Published on</th>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each pages}}
+			<tr>
+				<td class="page_id">{{id}}</td>
+				<td class="">{{title}}</td>
+				<td>{{description}}</td>
+				<td>{{#equals type 0}}
+						Menu
+					{{/equals}}
+					{{#equals type 1}}
+						Events
+					{{/equals}}
+					{{#equals type 2}}
+						Content
+					{{/equals}}
+				</td>
+				<td>{{#if isActive}}Yes{{else}}No{{/if}}</td>
+				<td>{{publishedOn}}</td>
+				<td><a href="#edit_page/{{id}}/"><button class="small" title="Edit page"><i class="fa fa-pencil-square-o"></i></button></a></td>
+				<td><button class="delete small" title="Delete page"><i class="fa fa-trash-o"></i></button></td>
+			</tr>
+			{{else}}
+			<tr>
+				<td colspan="8" style="text-align:center">No pages available</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,65 @@
+<div class="row">
+	<div class="large-12 columns">
+		<form data-abide="ajax" id="create_page_form">
+			<fieldset>
+				<legend>Create page</legend>
+				{{#equals is_edit 1}} 
+				<div class="row">
+					<div class="large-12 columns">
+						<label for="id">ID: <small> required</small>
+							<input type="text" id="id" value="{{id}}" disabled required pattern="integer" />
+						</label>
+						<small class="error">ID is required and must be a number</small>
+					</div>
+				</div>
+				{{/equals}}
+				<div class="row">
+					<div class="large-12 columns">
+						<label for="title">Title:<small> required</small>
+							<input type="text" id="title" value="{{title}}" required maxlength="50"/>
+						</label>
+						<small class="error">Title is required</small>
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-12 columns">
+						<label for="description">Description:</label>
+						<textarea id="description" maxlength="200" style="height:200px">{{description}}</textarea>
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-12 columns">
+						<br/>
+						<label for="type">Type:
+							<select id="type">
+								<option value="0" {{#equals type 0}}selected{{/equals}}>Menu</option>
+								<option value="1" {{#equals type 1}}selected{{/equals}}>Events</option>
+								<option value="2" {{#equals type 2}}selected{{/equals}}>Content</option>
+							</select>
+						</label>
+					</div>
+				</div>
+				<br/>
+				<div class="row">
+					<div class="large-12 columns">
+						<label for="published_on">Published on:<small> required</small>
+							<input type="text" id="published_on" value="{{publishedOn}}" class="hasdatepicker" required/>
+						</label>
+						<small class="error">Publish date is required</small>
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-12 columns">
+						<label for="is_active">Is active:</label>
+						<input type="checkbox" id="is_active" {{#if isActive}}checked="checked"{{/if}}/>
+					</div>
+				</div>
+				<div class="row" style="margin-bottom: 2em;">
+					<div class="large-12 columns">
+						<button id="create_page" class="small"><i class="fa fa-plus-square"></i> Save</button>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
